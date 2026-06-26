@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>si monyet & si kecill</title>
+    <link rel="stylesheet" href="yy.css">
+    <link rel="icon" href="foto.jpg - Salin.jpeg" type="image/x-icon">
+    <base target="_blank">
+</head>
+<body>
+    <canvas id="partikel-bg"></canvas>
+    <!-- Ambient glow blobs -->
+    <div class="bg-glow g1"></div>
+    <div class="bg-glow g2"></div>
+    <div class="bg-glow g3"></div>
+    <!-- Progress bar -->
+    <div class="progress-bar" id="progressBar" style="width:25%"></div>
+    <nav class="navbar">
+        <div class="nav-left">
+            <div class="nav-dot"></div>
+            <span>Our Memories</span>
+        </div>
+        <div class="nav-section-label" id="navSectionLabel">Intro</div>
+    </nav>
+    <!-- ══ PAGE CONTAINER ══ -->
+    <div class="page-container" id="pageContainer">
+        <!-- ══ SECTION 1: INTRO VIDEO ══ -->
+        <section class="page-section active" id="section-video" data-section="0">
+            <div class="section-inner centered">
+                <div class="album-card stagger stagger-1" id="albumCard">
+                    <div class="orbit-rings">
+                        <div class="orbit-ring"><div class="o-dot"></div></div>
+                        <div class="orbit-ring"><div class="o-dot"></div></div>
+                    </div>
+                    <div class="cover-wrapper">
+                        <img src="foto.jpg - Salin.jpeg" alt="Kenangan Kita" class="cover-img">
+                    </div>
+                    <p class="cover-hint">✦ Ketuk untuk membuka kenangan</p>
+                </div>
+                <div class="video-container" id="videoContainer">
+                    <video id="mainVideo" src="awal.mp4"
+                           preload="metadata" playsinline muted>
+                        Peramban tidak mendukung pemutaran video.
+                    </video>
+                </div>
+            </div>
+        </section>
+        <!-- ══ SECTION 2: KEPOIN YUK ══ -->
+        <section class="page-section" id="section-kepoin" data-section="1">
+            <div class="section-inner">
+                <div class="section-label stagger stagger-1">
+                    <span class="section-eyebrow">Galeri</span>
+                    <h2 class="section-title">Kepoin Yuk 😮</h2>
+                    <div class="section-title-bar"></div>
+                </div>
+                <div class="link-photos stagger stagger-2">
+                    <a href="https://www.instagram.com/dasaaa_d?utm_source=qr&igsh=bmFvMW0wd2JkaTF4" target="_blank">
+                        <div class="cover-wrapper">
+                            <img src="m.jpeg" alt="Foto 1" class="cover-img">
+                        </div>
+                        <p class="photo-caption">monyet</p>
+                    </a>
+                    <a href="https://www.instagram.com/dasa_rista?utm_source=qr&igsh=cjhhcHdpMW04OW1p" target="_blank">
+                        <div class="cover-wrapper">
+                            <img src="bersama.jpeg" alt="Foto 2" class="cover-img">
+                        </div>
+                        <p class="photo-caption">berdua</p>
+                    </a>
+                    <a href="https://www.instagram.com/ristantidwi.19?utm_source=qr&igsh=MW05ODkyY3cyb29paQ==" target="_blank">
+                        <div class="cover-wrapper">
+                            <img src="v.jpeg" alt="Foto 3" class="cover-img">
+                        </div>
+                        <p class="photo-caption">bocill kematian</p>
+                    </a>
+                </div>
+                <div class="music-card stagger stagger-3">
+                    <div class="music-cover">
+                        <img src="foto.jpg - Salin.jpeg" alt="Sampul Musik" class="music-img">
+                    </div>
+                    <div class="music-info">
+                        <h3>Terbagi Dalam Waktu</h3>
+                        <p>BARASUARA</p>
+                        <button type="button" id="playPauseBtn" class="play-btn">▶ Putar Musik</button>
+                        <audio id="audioMusic" src="td.mp4" preload="metadata"></audio>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ══ SECTION 3: ALBUM KENANGAN SLIDE ══ -->
+        <section class="page-section" id="section-album" data-section="2">
+            <div class="section-inner centered">
+                <div class="section-label stagger stagger-1">
+                    <span class="section-eyebrow">Koleksi</span>
+                    <h2 class="section-title">Album Kenangan 🤏</h2>
+                    <div class="section-title-bar"></div>
+                </div>
+                <div class="album-container stagger stagger-2">
+                    <div class="slide-frame">
+                        <div class="slide-stage" id="slideStage"></div>
+                    </div>
+                    <div class="nav-controls">
+                        <button class="btn-nav" id="btnPrev">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                            Sebelumnya
+                        </button>
+                        <div class="slide-indicators" id="indicators"></div>
+                        <div class="page-counter" id="pageCounter">1 / 17</div>
+                        <button class="btn-nav" id="btnNext">
+                            <span class="btn-label">Selanjutnya</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="swipe-hint stagger stagger-3">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                    Geser untuk berpindah
+                </div>
+            </div>
+        </section>
+        <!-- ══ SECTION 4: ENDING ══ -->
+        <section class="page-section" id="section-ending" data-section="3">
+            <div class="section-inner centered">
+                <div class="section-label stagger stagger-1">
+                    <span class="section-eyebrow">Penutup</span>
+                    <h2 class="section-title">Terima Kasih 😵💫</h2>
+                    <div class="section-title-bar"></div>
+                </div>
+                <div class="ending-card stagger stagger-2" id="endingCard">
+                    <div class="orbit-rings">
+                        <div class="orbit-ring"><div class="o-dot"></div></div>
+                        <div class="orbit-ring"><div class="o-dot"></div></div>
+                    </div>
+                    <div class="ending-badge">Pesan Terakhir</div>
+                    <div class="cover-wrapper">
+                        <img src="1.jpeg" alt="Kenangan Terindah" class="cover-img">
+                    </div>
+                    <p class="cover-hint">✦ Ketuk untuk melihat pesan terakhir</p>
+                </div>
+                <div class="ending-video-container" id="endingVideoContainer">
+                    <video id="endingVideo" src="11.mp4"
+                           preload="metadata" playsinline muted>
+                        Peramban tidak mendukung pemutaran video.
+                    </video>
+                </div>
+                <div class="ending-message" id="endingMessage">
+                    <p class="ending-text">Terima kasih sudah menjadi bagian dari ceritaku. ✦</p>
+                    <span class="ending-signature">With love</span>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- ══ SECTION NAVIGATION ══ -->
+    <div class="section-nav" id="sectionNav">
+        <button class="section-nav-btn" id="sectionPrev" disabled>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"/>
+            </svg>
+            <span>Kembali</span>
+        </button>
+        <div class="section-dots" id="sectionDots">
+            <div class="section-dot active" data-index="0"><span class="dot-label">Intro</span></div>
+            <div class="section-dot" data-index="1"><span class="dot-label">Galeri</span></div>
+            <div class="section-dot" data-index="2"><span class="dot-label">Album</span></div>
+            <div class="section-dot" data-index="3"><span class="dot-label">Akhir</span></div>
+        </div>
+        <button class="section-nav-btn" id="sectionNext">
+            <span>Lanjut</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"/>
+            </svg>
+        </button>
+    </div>
+    <script src="ii.js"></script>
+</body>
+</html>
